@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "google.golang.org/grpc/examples/helloworld/helloworld";
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.helloworld";
+option java_outer_classname = "HelloWorldProto";
+
+package pb;
+
+service User {
+    rpc Login (LoginReq) returns (LoginReq) {}
+    rpc LogOut (LogOutReq) returns (LogOutRsp) {}
+}
+
+message LoginReq {
+    string username = 1;
+    string password = 2;
+}
+
+message LoginRsp {
+    int32 ret = 1;
+}
+
+message LogOutReq {
+    string username = 1;
+    string password = 2;
+}
+
+message LogOutRsp {
+    int32 ret = 1;
+}
